@@ -1,3 +1,78 @@
 @charset "utf-8";
 /* CSS Document */
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+	
+}
+
+body {
+	font: normal 100%/1.5 sans-serif;
+	background-color: #ccc;
+	color: #555;
+	
+}
+
+form {
+	margin: 1em auto;
+	padding: 2em;
+	width: 34em;
+	background-color: #fff;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+	
+}
+
+.active,
+.complete {
+	margin: 1em auto;
+	padding: 0.25em;
+	border: 1px solid #000;
+	min-height: 10em;
+	
+}
+.item {
+	margin: 1em auto;
+	padding: 0.25em;
+	
+}
+
+/*div:last-child {
+	padding: 0;
+	
+}
+*/
+label {
+	display: block;
+	padding: 0 0 0.1em 0;
+	color: #000;
+	text-decoration: bold;
+}
+
+
+label strong {
+	color: #F00;
+}
+	
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.complete li {
+	text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+

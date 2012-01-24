@@ -6,24 +6,33 @@
 <link href="css/general.css" rel="stylesheet">
 </head>
 <body>
+<form name="todo" action="#" onsubmit="todo();">
+<div class="item">
+	<label for="item"> New To-Do Item </label>
+	<input type="text" id="item" name="item" size="75">
+</div> <!-- End Class Item --> 
 
-<div>
-	<label for="item"> Name </label>
-	<input type="text" id="item" name="item" maxlength="25">
-</div>
+<div class="submit">
+	<button id="itemButton">Submit Item</button>
+</div> <!-- End Class submit --> 
 
+<div class="active">
+	<label for="active">Active Items </label>
+	<ol>
+		<li>test</li>
+	</ol>
+</div> <!-- End Class submit --> 
 
-<!--
-<button id="create">Create</button>
-<button id="up">U</button>
-<button id="down">D</button>
-<button id="left"><</button>
-<button id="right">></button>
-<input type="color" id="color">
+<div class="complete">
+	<label for="complete"> Closed Items </label>
+	<ul>
+		<li>test</li>
+	</ul>
+</div> <!-- End Class submit --> 
 
--->
+</form>
 
-	<script src="js/to-do.js"></script>
+<script src="js/todo.js"></script>
 	
 </body>
 </html>
