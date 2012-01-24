@@ -7,17 +7,29 @@
 
 */
 
-var todo = function(ev) {
- 	console.log("It is working");
+
+	console.log("entering JS");
+var box;	// holds our <div> to move around
+
+// addEventListener("event", function, false = act on down bubble, true = act on up bubble)
+
+var createlist = function(ev) {
+ 	console.log("in function createlist");
+	box = document.createElement("div"); // createElement() makes a new empty HTML tag
+	box.className = "box active"; //className allows us to manipulate the classes of a tag
+	document.body.appendChild(box); // append child will add a element to the HTML file
+
+	var randLeft = Math.round(Math.random() * (document.documentElement.clientWidth - box.offsetWidth));
+	box.style.left = randLeft + "px";
+
+	var randTop = Math.round(Math.random() * (document.documentElement.clientHeight - box.offsetHeight));
+	box.style.top = randTop + "px";
 
 }
-
-
-
+document.getElementById("fred").addEventListener("click", createlist, true);
 
 /*
 
-var box;	// holds our <div> to move around
 var buttonLeft;
 var buttonRight;
 var buttonUp;
