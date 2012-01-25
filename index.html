@@ -6,31 +6,31 @@
 <link href="css/general.css" rel="stylesheet">
 </head>
 <body>
-<form>
-<div class="item">
-	<label for="item"> New To-Do Item </label>
-	<input type="text" id="item" name="item" size="75">
-</div> <!-- End Class Item --> 
+<div class="newform">
+	<div class="item">
+		<label for="item"> New To-Do Item </label>
+		<input type="text" id="item" name="item" size="75">
+	</div> <!-- End Class Item --> 
+	
+	<div class="submit">
+		<button id="submit">Submit Item</button>
+	</div> <!-- End Class submit --> 
+	
+	<div class="active">
+		<label for="active">Active Items </label>
+		<ol>
+			<li>test</li>
+		</ol>
+	</div> <!-- End Class submit --> 
+	
+	<div class="complete">
+		<label for="complete"> Closed Items </label>
+		<ul>
+			<li>test</li>
+		</ul>
+	</div> <!-- End Class submit --> 
 
-<div class="submit">
-	<button id="fred">Submit Item</button>
-</div> <!-- End Class submit --> 
-
-<div class="active">
-	<label for="active">Active Items </label>
-	<ol>
-		<li>test</li>
-	</ol>
-</div> <!-- End Class submit --> 
-
-<div class="complete">
-	<label for="complete"> Closed Items </label>
-	<ul>
-		<li>test</li>
-	</ul>
-</div> <!-- End Class submit --> 
-
-</form>
+</div> <!-- End Class newform --> 
 
 <script src="js/todo.js"></script>
 	
