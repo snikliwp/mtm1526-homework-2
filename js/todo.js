@@ -61,7 +61,7 @@ var activeClicked = document.getElementById("active").addEventListener("click",f
 	console.log(ev.target.id);
 	
 	// remove the data from the active items list
-//	ev.target.removeChild("li");
+	ev.target.parentNode.removeChild(ev.target);
 //	var oldItem = document.removeChild(ev.target);
 //	var oldItem = document.getElementById("active").removeChild(ev.target.id);
 //	var oldItem = document.getElementById("active").removeChild(getElementById(ev.target.id));
@@ -91,8 +91,8 @@ var completeClicked = document.getElementById("complete").addEventListener("clic
 	console.log(ev.target.id);
 	
 	// remove the data from the complete items list
-//	var oldItem = document.removeChild(ev.target);
-	var oldItem = document.getElementById("complete").removeChild(ev.target.id);
+	ev.target.parentNode.removeChild(ev.target);
+//	var oldItem = document.getElementById("complete").removeChild(ev.target.id);
 //	var oldItem = document.getElementById("complete").removeChild(getElementById(ev.target.id));
 	
 	
