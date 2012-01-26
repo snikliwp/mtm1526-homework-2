@@ -14,6 +14,19 @@ body {
 	color: #555;
 	
 }
+.textInvalid {
+	background-color: #F66;
+	border: 2px red inset;
+}
+
+.captionInvalid {
+	color: f00;
+	font-weight: bold;
+	
+}
+
+h1 {text-align:center;
+}
 
 .newform {
 	margin: 1em auto;

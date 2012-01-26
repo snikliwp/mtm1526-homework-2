@@ -8,18 +8,18 @@
 */
 
 
-	console.log("entering JS");
+console.log("entering JS");
+var data = document.getElementById("item"); // variable containing the information about the to-do text box
+console.log(data);
 
-var data = document.getElementById("item");
 
 var isitempty = function(ev) {
 	console.log("in function isitempty");
-			console.log(data);
-			console.log(this.value);
-			console.log(ev.target.value);
 	if (data.value == "") {
-			console.log("item is empty");
-			console.log(data.value);
+		console.log("item is empty");
+		data.className = "textInvalid";
+		alert ("you must put something in the New To-Do Item field")
+		data.className = "";
 	} else {
 			console.log("item is full");
 			console.log(data.value);
@@ -28,18 +28,112 @@ var isitempty = function(ev) {
 } // end function isitempty
 
 
-var createlist = function(ev) {
+var createlist = function(ev) { // this installs the to do items from the text box to the active Items list
 	console.log("in function createlist");
-	newitem = document.createElement("li"); // createElement() makes a new empty HTML tag
-	newitem.id = "one";
-	document.body.appendChild(newitem); // append child will add an element to the HTML file
 	
+//	var tmp = data.value; 
 	
+// 	var newitem = document.getElementById("active").appendChild(document.createElement("li")).innerHTML = data.value;
+	var newitem = document.getElementById("active").appendChild(document.createElement("li"));
+	newitem.setAttribute("id", data.value);
+	newitem.innerHTML = data.value;
+	console.log(newitem);
 	
-	
+	data.value = ""; // clean out the text box
+} // end function createlist
 
 
-} // end function create list
+
+
+
+// Get the element, add a click listener...
+var activeClicked = document.getElementById("active").addEventListener("click",function(ev) {
+	console.log("In function activeClicked");
+	
+	var tmp = document.getElementById("active")
+	console.log(tmp);
+	// copy the clicked on data to the closed list
+	var newitem = document.getElementById("complete").appendChild(document.createElement("li"));
+	newitem.setAttribute("id", ev.target.id);
+	newitem.innerHTML = ev.target.id;
+	console.log(newitem);
+	console.log(ev.target);
+	console.log(ev.target.id);
+	
+	// remove the data from the active items list
+	ev.target.removeChild("li");
+//	var oldItem = document.removeChild(ev.target);
+//	var oldItem = document.getElementById("active").removeChild(ev.target.id);
+//	var oldItem = document.getElementById("active").removeChild(getElementById(ev.target.id));
+	
+	
+	console.log(ev);
+	console.log(ev.target.nodeValue);
+	console.log(ev.target.Element);
+	console.log(ev.target.Text);
+	console.log(ev.target.Attr);
+	// If it was a list item
+//	if(e.target &amp;&amp; e.target.nodeName == "LI") {
+		// List item found!  Output the ID!
+//	console.log("List item ",e.target.id.replace("post-")," was clicked!");
+//	}
+});
+
+var completeClicked = document.getElementById("complete").addEventListener("click",function(ev) {
+	console.log("In function completeClicked");
+	console.log(ev);
+	// copy the clicked on data to the Active list
+	var newitem = document.getElementById("active").appendChild(document.createElement("li"));
+	newitem.setAttribute("id", ev.target.id);
+	newitem.innerHTML = ev.target.id;
+	console.log(newitem);
+	console.log(ev.target);
+	console.log(ev.target.id);
+	
+	// remove the data from the complete items list
+//	var oldItem = document.removeChild(ev.target);
+	var oldItem = document.getElementById("complete").removeChild(ev.target.id);
+//	var oldItem = document.getElementById("complete").removeChild(getElementById(ev.target.id));
+	
+	
+	console.log(ev);
+	console.log(ev.target.nodeValue);
+	console.log(ev.target.Element);
+	console.log(ev.target.Text);
+	console.log(ev.target.Attr);
+	// If it was a list item
+//	if(e.target &amp;&amp; e.target.nodeName == "LI") {
+		// List item found!  Output the ID!
+//	console.log("List item ",e.target.id.replace("post-")," was clicked!");
+//	}
+});
+
+// document.getElementById("complete").addEventListener("click", makeActive());
+
+
+var tmp = function(ev) {document.getElementByTagName("li").addEventListener("click", inactive, false);}
+
+
+
+
+var makeInactive = function(ev) {
+	console.log("in function makeInactive");
+	var targetitem = ev.target;
+	var nodeitem = ev.target.nodename;
+	console.log(targetitem);
+	console.log(nodeitem);
+
+}  // end function makeInactive
+
+var makeActive = function(ev) {
+		console.log("in function makeActive");
+
+}  // end function makeActive
+
+
+
+
+
 
 // addEventListener("event", function, false = act on down bubble, true = act on up bubble)
 document.getElementById("submit").addEventListener("click", isitempty, false);
