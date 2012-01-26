@@ -61,7 +61,7 @@ var activeClicked = document.getElementById("active").addEventListener("click",f
 	console.log(ev.target.id);
 	
 	// remove the data from the active items list
-	ev.target.removeChild("li");
+//	ev.target.removeChild("li");
 //	var oldItem = document.removeChild(ev.target);
 //	var oldItem = document.getElementById("active").removeChild(ev.target.id);
 //	var oldItem = document.getElementById("active").removeChild(getElementById(ev.target.id));
@@ -77,7 +77,7 @@ var activeClicked = document.getElementById("active").addEventListener("click",f
 		// List item found!  Output the ID!
 //	console.log("List item ",e.target.id.replace("post-")," was clicked!");
 //	}
-});
+},false);
 
 var completeClicked = document.getElementById("complete").addEventListener("click",function(ev) {
 	console.log("In function completeClicked");
@@ -106,7 +106,7 @@ var completeClicked = document.getElementById("complete").addEventListener("clic
 		// List item found!  Output the ID!
 //	console.log("List item ",e.target.id.replace("post-")," was clicked!");
 //	}
-});
+},false);
 
 // document.getElementById("complete").addEventListener("click", makeActive());
 
