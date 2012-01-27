@@ -29,11 +29,11 @@ var activeClicked = document.getElementById("active").addEventListener("click",f
 	 // this function moves the item from the active to the complete boxes
 	var tmp = document.getElementById("active")
 	// copy the clicked on data to the closed list
-	var newitem = document.getElementById("complete").appendChild(document.createElement("li"));  // create the new <li> element in the complete field 
-	newitem.setAttribute("id", ev.target.id); // set the id tag to the same value as the data being moved
-	newitem.innerHTML = ev.target.id; // put the info into the <li> element
+	var newitem = document.getElementById("complete").appendChild(tmp);  // create the new <li> element in the complete field 
+//	newitem.setAttribute("id", ev.target.id); // set the id tag to the same value as the data being moved
+///	newitem.innerHTML = ev.target.id; // put the info into the <li> element
 	// remove the data from the active items list
-	ev.target.parentNode.removeChild(ev.target); 
+//	ev.target.parentNode.removeChild(ev.target); 
 },false); // end of function activeClicked
 
 
