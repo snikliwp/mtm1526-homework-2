@@ -45,6 +45,15 @@ var completeClicked = document.getElementById("complete").addEventListener("clic
 	ev.target.parentNode.removeChild(ev.target);
 },false); // end of function completeClicked
 
+document.documentElement.addEventListener("keydown", function(ev) {
+	// look for the return key to enter data
+	switch(ev.keyCode) {
+		case 13 : isitempty();
+		break;
+		default: console.log(ev.keyCode);
+		break;
+		}
+}, false);
 
 // when someone clicks on the submit button move the data in the to-do field to the active box through isitempty
 document.getElementById("submit").addEventListener("click", isitempty, false);
